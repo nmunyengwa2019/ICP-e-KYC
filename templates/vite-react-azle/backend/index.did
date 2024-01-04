@@ -1,5 +1,30 @@
+type Customer = record {
+  id : text;
+  dob : text;
+  passport : text;
+  facialRecognition : text;
+  nationalIdPic : text;
+  fullname : text;
+  address : text;
+  gender : text;
+  phone : text;
+  nationalIdNumber : text;
+};
+type CustomerPayload = record {
+  dob : text;
+  passport : text;
+  facialRecognition : text;
+  nationalIdPic : text;
+  fullname : text;
+  address : text;
+  gender : text;
+  phone : text;
+  nationalIdNumber : text;
+};
+type _AzleResult = variant { Ok : Customer; Err : text };
 service : () -> {
   add : (nat) -> (nat);
+  createCustomer : (CustomerPayload) -> (_AzleResult);
   get : () -> (nat) query;
   inc : () -> (nat);
 }
